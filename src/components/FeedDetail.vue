@@ -10,7 +10,7 @@
 		<p class="likes">
 			<a href="#" v-on:click.prevent="likeCounter(1)"><i class="far fa-thumbs-up mr-3"></i></a> 
 			<b>{{feed.likes}}</b>
-			<a href="#"v-on:click.prevent="likeCounter(-1)"><i class="far fa-thumbs-down ml-3"></i></a>
+			<a href="#" v-on:click.prevent="likeCounter(-1)"><i class="far fa-thumbs-down ml-3"></i></a>
 		</p>
 		<hr class="smallLine">
 		<!-- buttons -->
