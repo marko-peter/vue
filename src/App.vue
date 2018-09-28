@@ -1,31 +1,36 @@
+<!-- main vue component with general CSS styling -->
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" class="container">
     <router-view/>
   </div>
 </template>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+body {
+	background-image: url(../src/assets/background.jpg);
+	background-size: cover;
 }
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.container {
+  margin-top: 3%;
+  margin-bottom: 2%;
+  padding: 0;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.card {
+	width: 47%;
+	margin: 1% 1.5%;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+form {
+	width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+.card:hover {
+	background-color: rgba(255, 255, 255, 0.9);
 }
 </style>
