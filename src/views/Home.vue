@@ -13,6 +13,10 @@
       </div>
     </div>
     
+    <spinner
+      v-show="showSpinner">
+    </spinner>
+
     <!-- list of all feeds -->
     <list-item
       v-for="feed in feeds"
@@ -28,6 +32,7 @@
 // @ is an alias to /src
 import MyForm from "@/components/MyForm.vue";
 import ListItem from "@/components/ListItem.vue";
+import Spinner from "@/components/Spinner.vue";
 import api from "@/api.js";
 
 export default {
@@ -35,7 +40,8 @@ export default {
 
   components: {
     MyForm,
-    ListItem
+    ListItem,
+    Spinner
   },
 
   data: function() {
@@ -44,7 +50,8 @@ export default {
       feeds: [],
       // props values for MyForm componenet
       nameInForm: '',
-      textInForm: ''
+      textInForm: '',
+      showSpinner: true
     }
   },
 
@@ -83,6 +90,7 @@ export default {
         if(response.status === 200) {
           // save reversed list of feeds (the newest are at the top)
           this.feeds = response.data.reverse();
+          this.showSpinner = false;
         }
       })
       // handle error
